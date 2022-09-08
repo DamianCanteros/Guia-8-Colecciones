@@ -56,6 +56,7 @@ public class MovieService {
     public void showMovieOHOM(){
         
         System.out.println("Películas con una duración mayor a 1 hora");
+        System.out.println("");
         for (Movie aux : Movies) {
             
             if (aux.getDuration()>=1) {
@@ -70,7 +71,7 @@ public class MovieService {
         @Override
         public int compare(Movie t, Movie t1) {
             
-            return t1.getDuration().compareTo(t.getDuration());
+            return t.getDuration().compareTo(t1.getDuration());
         }    
     }; 
     
@@ -78,7 +79,9 @@ public class MovieService {
     public void organizeDurationDescending(){
         
         Collections.sort(Movies, organizeDuration);
+        Collections.reverse(Movies);
         System.out.println("Películas de acuerdo a su duración (de mayor a menor)");
+        System.out.println("");
         showMovie();
     }
     
@@ -86,8 +89,8 @@ public class MovieService {
     public void organizeDurationAscending(){
         
         Collections.sort(Movies, organizeDuration);
-        Collections.reverse(Movies);
         System.out.println("Películas de acuerdo a su duración (de menor a mayor)");
+        System.out.println("");
         showMovie();
     }
 
@@ -96,7 +99,7 @@ public class MovieService {
         @Override
         public int compare(Movie t, Movie t1) {
             
-            return t1.getTitle().compareTo(t.getTitle());
+            return t.getTitle().compareTo(t1.getTitle());
         }    
     }; 
     
@@ -104,8 +107,8 @@ public class MovieService {
     public void organizeTitle(){
         
         Collections.sort(Movies, organizeTitle);
-        Collections.reverse(Movies);
         System.out.println("Películas alfabéticamente por título");
+        System.out.println("");
         showMovie();
     }
 
@@ -114,7 +117,7 @@ public class MovieService {
         @Override
         public int compare(Movie t, Movie t1) {
             
-            return t1.getDirector().compareTo(t.getDirector());
+            return t.getDirector().compareTo(t1.getDirector());
         }    
     }; 
     
@@ -122,8 +125,8 @@ public class MovieService {
     public void organizeDirector(){
         
         Collections.sort(Movies, organizeDirector);
-        Collections.reverse(Movies);
         System.out.println("Películas alfabéticamente por director");
+        System.out.println("");
         showMovie();
     }    
 }
