@@ -1,8 +1,7 @@
 
-package exercise_5.service;
+package exercise_6.service;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -39,23 +38,14 @@ public class ShopService {
         
         System.out.println("insert the product that you want to modify");
         String name = read.next();
-        
-        boolean found=false;
-        
-        for (Map.Entry<String, Integer> entry : products.entrySet()) {
-            String key = entry.getKey();
-            Integer value = entry.getValue();
             
-            if (name.equalsIgnoreCase(key)) {
+            if (products.containsKey(name)) {
                 
                 System.out.println("insert new price");
                 Integer price = read.nextInt();
                 
-                entry.setValue(price);
-                found = true;
-            }  
-        }
-        if (!found) {
+                products.replace(name,price);
+            } else {
             System.out.println("The product has not been found");
         } 
     } 
@@ -65,18 +55,11 @@ public class ShopService {
         
         System.out.println("insert the product that you want to remove");
         String name = read.next();
-        
-        boolean found=false;
-        
-        for (String product : products.keySet()) {
  
-            if (name.equalsIgnoreCase(product)) {
+            if (products.containsKey(name)) {
                 
                 products.remove(name);
-                found = true;
-            }  
-        }
-        if (!found) {
+            } else {
             System.out.println("The product has not been found");
         } 
     } 

@@ -9,7 +9,7 @@ Realizar un menú para lograr todas las acciones previamente mencionadas.
  */
 package exercise_6;
 
-import exercise_5.service.ShopService;
+import exercise_6.service.ShopService;
 import java.util.Scanner;
 
 /**
